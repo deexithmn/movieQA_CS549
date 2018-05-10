@@ -1,0 +1,39 @@
+{% extends "layout/layout.html" %}
+{% block body %}
+
+<div class="container">
+
+    <div class="row" style="margin-top:50px">
+        <div class="col s6 m4">
+                <div class="card">
+                        <div class="card-image">
+                               <img src="../static/images/{{item.image}}.jpg">
+                        </div>
+                        
+                </div>
+
+        </div>
+        <div class="col s6 m8">
+            <h2>{{ item.movie }}</h2>
+            <p>{{ item.context }}</p>
+
+
+{#            Need to loop here for the length of item . question#}
+            {% for i in range(0,item.question|length) %}
+                <div class="row">
+                <p>{{ item.question[i]}}</p>
+                <p><strong>Actual Answer:</strong> {{ item.actualAns[i]}}</p>
+                    <p><strong>Predicted Answer:</strong> {{ item.predictedAns[i]}}</p>
+                </div>
+            {% endfor %}
+        <div>
+           <button class=""> <a href=  "/">Back</a></button>
+        </div>
+        </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

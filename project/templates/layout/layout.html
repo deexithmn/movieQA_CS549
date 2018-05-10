@@ -1,0 +1,39 @@
+<!doctype html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+         <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+         
+        <title>Know Your Movie</title>
+    </head>
+    <body>    
+        <div class="">
+            
+        <nav class="teal">
+        <div class="row">
+          <p style="text-align:center;">Know Your Movie<p>
+          
+        </div>
+         </nav>
+         
+           <!--  <h1>Data fetch</h1>
+            {% for message in get_flashed_messages() %}
+                <div class="flash">{{ message }}</div>
+            {% endfor %} -->
+            {% macro render_error(field) %}
+                {% if field.errors %}
+                    {% for error in field.errors %}<span class='error'>{{ error }}</span>{% endfor %}
+                {% endif %}
+            {% endmacro %}
+            {% block body %}{% endblock %}
+        </div>
+    </body>
+</html>
